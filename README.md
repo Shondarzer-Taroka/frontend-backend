@@ -4,6 +4,8 @@
 
 This project is a RESTful API built using Node.js and Express.js. It allows users to manage "Help Center" cards, which represent different sections of a help center, such as "Branches," "Manage Your Account," and "Manage Billing." Users can create, retrieve, and search for these cards.
 
+**Live Site URL:** [Help Center Api](https://help-center-api-ivory.vercel.app)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your local machine:
@@ -18,8 +20,8 @@ Before you begin, ensure you have the following installed on your local machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/help-center-api.git
-cd help-center-api
+git clone https://github.com/Shondarzer-Taroka/frontend-backend.git
+cd frontend-backend
 ```
 
 ### 2. Install Dependencies
