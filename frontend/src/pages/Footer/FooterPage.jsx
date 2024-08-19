@@ -18,7 +18,7 @@ const FooterPage = () => {
                 <div>
                     <h1 className="font-bold">Community</h1>
                     <p>Twitter</p>
-                    <p>Linkedin</p>
+                    <p>LinkedIn</p>
                     <p>Dribble</p>
                     <p>Podcast</p>
                 </div>

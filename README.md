@@ -78,8 +78,6 @@ To share functionality across a component tree in React, you can use the followi
 2. **Custom Hooks**:
    - Custom hooks are used to encapsulate reusable logic or state management that can be shared across multiple components. This approach helps keep components modular and maintainable by centralizing related functionality.
 
-3. **Higher-Order Components (HOCs)**:
-   - Higher-Order Components are functions that take a component and return a new component with additional functionality or props. HOCs allow you to enhance components by injecting shared functionality without modifying the original component.
 
 ## Why `useState` is Appropriate for Handling State in a Complex Component
 
