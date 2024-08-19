@@ -15,40 +15,48 @@ Before you begin, ensure you have the following installed on your local machine:
 
 ## Setup Instructions
 
-### 1. Clone the 
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/help-center-api.git
+cd help-center-api
+```
 
 ### 2. Install Dependencies
 Navigate to the project directory and install the necessary dependencies:
 
 ```bash
-git clone https://github.com/Shondarzer-Taroka/frontend-backend.git
-cd frontend-backend
-
-
-2. Install Dependencies
-Navigate to the project directory and install the necessary dependencies:
-
 npm install
+```
 
-
-3. Set Up Environment Variables
+### 3. Set Up Environment Variables
 Create a .env file in the root of your project directory and add the following environment variables:
 
+```bash
 USER_ID=your_mongodb_user_id
 USER_PASSWORD=your_mongodb_password
 PORT=6699 # or any port you prefer
+```
 
-
-USER_ID: Your MongoDB user ID.
-USER_PASSWORD: Your MongoDB password.
-PORT: The port number on which the server will run (default is 6699).
-Ensure this file is added to your .gitignore to prevent it from being committed to version control, as it contains sensitive information.
-
-
-4. Start the MongoDB Server
+### 4. Start the MongoDB Server
 Ensure your MongoDB server is running. If you're using MongoDB Atlas (cloud), you can skip this step.
 
-5. Run the Server
+### 5. Run the Server
 Start the Node.js server with the following command:
 
+```bash
 npm start
+
+```
+
+If you want the server to reload automatically when files change, you can use:
+
+```bash
+npm run dev
+```
+### 6. Verify the Setup
+Open your browser or use a tool like Postman to test the API by visiting:
+
+```bash
+http://localhost:6699
+```
