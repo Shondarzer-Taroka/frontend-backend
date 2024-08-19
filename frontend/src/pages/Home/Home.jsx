@@ -1,4 +1,4 @@
-import { Label, TextInput } from "flowbite-react";
+
 import { HiArrowNarrowRight } from "react-icons/hi";
 import CardItem from "../Card/Card";
 import { useEffect, useRef, useState } from "react";
@@ -17,45 +17,34 @@ const Home = () => {
         })
     },[])
 
-//     function handleSearch() {
-//         const query = searchValue.current.value.trim();
-//         console.log(query);
+    function handleSearch() {
+        const query = searchValue.current.value.trim();
+        console.log(query);
         
-//         if (query) {
-//             axios.get(`http://localhost:6699/cardssearch?search=${query}`)
-//                 .then(res => {
-//                     setCards(res.data);
-//                 })
-//                 .catch(err => {
-//                     console.log(err);
-//                 });
-//         } else {
-//             // If the search input is empty, fetch all cards again
-//             axios.get('http://localhost:6699/cards')
-//                 .then(res => {
-//                     setCards(res.data);
-//                 })
-//                 .catch(err => {
-//                     console.log(err);
-//                 });
-//         }
-//     }
+        if (query) {
+            axios.get(`http://localhost:6699/cardssearch?search=${query}`)
+                .then(res => {
+                    setCards(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        } else {
+            // If the search input is empty, fetch all cards again 
+            axios.get('http://localhost:6699/cards')
+                .then(res => {
+                    setCards(res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+    }
     
     return (
         <div>
             <div className="bg-violet-100 p-20">
                 <h1 className="text-4xl font-bold flex justify-center items-center">How Can We Help? </h1>
-                {/* <div className="flex justify-center">
-                <div className="max-w-md">
-                    <div className="mb-2 block">
-                        <Label htmlFor="search" value="" />
-                    </div>
-                    
-                    <TextInput className="" id="search" type="search" placeholder="search here" rightIcon={HiArrowNarrowRight} />
-              
-                </div>
-
-            </div> */}
 
                 <div className="flex justify-center mt-6" >
                     <div style={{ width: '290px', boxShadow: '1px 2px 2px gray' }} className="bg-white w-full flex justify-between items-center gap-0">
