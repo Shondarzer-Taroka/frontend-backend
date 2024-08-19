@@ -3,26 +3,31 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import CardItem from "../Card/Card";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { Spinner } from "flowbite-react";
 const Home = () => {
-    let searchValue=useRef()
-    let [cards,setCards]=useState([])
-    useEffect(()=>{
-        axios.get('http://localhost:6699/cards')
-        .then(res=>{
-            console.log(res.data);
-            setCards(res.data)
-        })
-        .catch(err=>{
-            console.log(err);
-        })
-    },[])
+    let searchValue = useRef()
+    let [cards, setCards] = useState([])
+    let [loading, setLoading] = useState(true)
+    useEffect(() => {
+        setLoading(true)
+        axios.get('https://abstract-server.vercel.app/cards')
+            .then(res => {
+                console.log(res.data);
+                setCards(res.data)
+                setLoading(false)
+            })
+            .catch(err => {
+                console.log(err);
+                setLoading(false)
+            })
+    }, [])
 
     function handleSearch() {
         const query = searchValue.current.value.trim();
         console.log(query);
-        
+
         if (query) {
-            axios.get(`http://localhost:6699/cardssearch?search=${query}`)
+            axios.get(`https://abstract-server.vercel.app/cardssearch?search=${query}`)
                 .then(res => {
                     setCards(res.data);
                 })
@@ -31,7 +36,7 @@ const Home = () => {
                 });
         } else {
             // If the search input is empty, fetch all cards again 
-            axios.get('http://localhost:6699/cards')
+            axios.get('https://abstract-server.vercel.app/cards')
                 .then(res => {
                     setCards(res.data);
                 })
@@ -40,7 +45,7 @@ const Home = () => {
                 });
         }
     }
-    
+
     return (
         <div>
             <div className="bg-violet-100 p-20">
@@ -55,11 +60,15 @@ const Home = () => {
 
 
             </div>
-            <div id="cards" className="max-w-5xl mx-auto mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-             {
-                cards.map(card=><CardItem key={card._id} title={card.title} description={card.description}></CardItem>)
-             }
-            </div>
+
+
+            {loading ? <div className="flex justify-center h-[300px] items-center"><Spinner aria-label="Extra large spinner example" size="xl" /> </div>: <>
+                <div id="cards" className="max-w-5xl mx-auto mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {
+                        cards.map(card => <CardItem key={card._id} title={card.title} description={card.description}></CardItem>)
+                    }
+                </div>
+            </>}
         </div>
     );
 };
