@@ -2,20 +2,20 @@ import { Label, TextInput } from "flowbite-react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import CardItem from "../Card/Card";
 import { useEffect, useRef, useState } from "react";
-// import axios from "axios";
-// const Home = () => {
-//     let searchValue=useRef()
-//     let [cards,setCards]=useState([])
-//     useEffect(()=>{
-//         axios.get('http://localhost:6699/cards')
-//         .then(res=>{
-//             console.log(res.data);
-//             setCards(res.data)
-//         })
-//         .catch(err=>{
-//             console.log(err);
-//         })
-//     },[])
+import axios from "axios";
+const Home = () => {
+    let searchValue=useRef()
+    let [cards,setCards]=useState([])
+    useEffect(()=>{
+        axios.get('http://localhost:6699/cards')
+        .then(res=>{
+            console.log(res.data);
+            setCards(res.data)
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    },[])
 
 //     function handleSearch() {
 //         const query = searchValue.current.value.trim();
@@ -41,7 +41,7 @@ import { useEffect, useRef, useState } from "react";
 //         }
 //     }
     
-//     return (
+    return (
         <div>
             <div className="bg-violet-100 p-20">
                 <h1 className="text-4xl font-bold flex justify-center items-center">How Can We Help? </h1>
@@ -72,7 +72,7 @@ import { useEffect, useRef, useState } from "react";
              }
             </div>
         </div>
-//     );
-// };
+    );
+};
 
-// export default Home;
+export default Home;
