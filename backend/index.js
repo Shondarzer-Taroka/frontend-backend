@@ -38,10 +38,10 @@ async function run() {
         res.send(result)
     })
 
-    // app.get('/cards/:title',async(req,res)=>{
-    //     let result =await cardCollection.findOne({title:req.params.title})
-    //     res.send(result)
-    // })
+    app.get('/cards/:title',async(req,res)=>{
+        let result =await cardCollection.findOne({title:req.params.title})
+        res.send(result)
+    })
 
     // app.get('/cardssearch',async(req,res)=>{
     //   let searchQuery=req.query.search
