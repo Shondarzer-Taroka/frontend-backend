@@ -1,11 +1,16 @@
 
-import './App.css'
+
+import { Button } from "flowbite-react";
+import Home from './pages/Home/Home';
+// import Nav from './pages/Nav/Nav';
 
 function App() {
 
   return (
     <>
-       I am home page
+      <Button color="blue">Blue</Button>
+      <Home></Home>
+      {/* <Nav></Nav> */}
     </>
   )
 }
